@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- RecyclerView for Shop Items -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewShop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Progress Bar for Loading State -->
+    <ProgressBar
+        android:id="@+id/progressBarShop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</LinearLayout>
+</layout>

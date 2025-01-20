@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/firstGroup">
+        <item
+            android:id="@+id/homeItem"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/petItem"
+            android:icon="@drawable/ic_paw"
+            android:title="Pets" />
+
+        <item
+            android:id="@+id/sitterItem"
+            android:icon="@drawable/ic_walk"
+            android:title="Sitter" />
+        <item
+            android:id="@+id/shopItem"
+            android:icon="@drawable/ic_cart"
+            android:title="Shop" />
+
+
+    </group>
+
+</menu>
