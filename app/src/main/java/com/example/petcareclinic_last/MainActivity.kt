@@ -18,9 +18,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.petcareclinic_last.R
 import com.example.petcareclinic_last.databinding.ActivityMainBinding
-import com.example.petcareclinic_last.fragments.PetFragment
-import com.example.petcareclinic_last.fragments.SitterFragment
-import com.example.petcareclinic_last.fragments.ShopFragment
+
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -30,22 +28,24 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Inflate layout using ViewBinding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Set up Toolbar
         setSupportActionBar(binding.appBarMain.toolbar)
 
+        // Set up Navigation Drawer
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navigationView
         val navController = findNavController(R.id.nav_host_fragment_container_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
+        // Set top-level destinations for the Navigation Drawer
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.homeItem,
-                R.id.petItem,
-                R.id.sitterItem,
-                R.id.shopItem,
+                R.id.homeFragment,
+                R.id.postFragment,
+                R.id.commentsFragment,
 
             ), drawerLayout
         )
@@ -54,7 +54,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
@@ -62,6 +61,5 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_container_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-
     }
 }

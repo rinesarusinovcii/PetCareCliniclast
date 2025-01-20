@@ -7,15 +7,15 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.petcareclinic_last.fragments.PetFragment"
-        android:label="PetFragment" />
+        android:label="HomeFragment" />
     <fragment
         android:id="@+id/commentsFragment"
         android:name="com.example.petcareclinic_last.fragments.SitterFragment"
-        android:label="SitterFragment" />
+        android:label="CommentsFragment" />
     <fragment
         android:id="@+id/postFragment"
         android:name="com.example.petcareclinic_last.fragments.ShopFragment"
-        android:label="ShopFragment">
+        android:label="PostFragment">
 <!--        <action-->
 <!--            android:id="@+id/action_postFragment_to_postDetailsFragment"-->
 <!--            app:destination="@id/postDetailsFragment"-->
