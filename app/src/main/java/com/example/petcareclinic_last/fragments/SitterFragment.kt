@@ -1,3 +1,6 @@
+
+package com.example.petcareclinic_last.fragments
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +15,7 @@ import com.example.petcareclinic_last.models.Sitter
 
 class SitterFragment : Fragment() {
     private lateinit var binding: SitterFragmentBinding
+//    private  var sitterList: List<Sitter> = listOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,

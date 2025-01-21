@@ -3,7 +3,7 @@ package com.example.petcareclinic_last.helpers
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.petcareclinic_last.services.ServiceApiShop
-import com.example.petcareclinic_last.services.ServiceApiUser
+
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

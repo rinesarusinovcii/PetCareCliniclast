@@ -5,17 +5,17 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/petItemFragment"
         android:name="com.example.petcareclinic_last.fragments.PetFragment"
-        android:label="HomeFragment" />
+        android:label="PetFragment" />
     <fragment
         android:id="@+id/commentsFragment"
         android:name="com.example.petcareclinic_last.fragments.SitterFragment"
-        android:label="CommentsFragment" />
+        android:label="SitterFragment" />
     <fragment
         android:id="@+id/postFragment"
         android:name="com.example.petcareclinic_last.fragments.ShopFragment"
-        android:label="PostFragment">
+        android:label="ShopFragment">
 <!--        <action-->
 <!--            android:id="@+id/action_postFragment_to_postDetailsFragment"-->
 <!--            app:destination="@id/postDetailsFragment"-->
