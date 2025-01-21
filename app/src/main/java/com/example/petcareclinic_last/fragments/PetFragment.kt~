@@ -1,28 +1,32 @@
-
 package com.example.petcareclinic_last.fragments
 
 import android.os.Bundle
+import retrofit2.Call
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.petcareclinic_last.R
+import com.example.petcareclinic_last.adapters.PetAdapter
 import com.example.petcareclinic_last.adapters.SitterAdapter
-import com.example.petcareclinic_last.databinding.SitterFragmentBinding
+import com.example.petcareclinic_last.databinding.PetFragmentBinding
+import com.example.petcareclinic_last.models.Pet
 import com.example.petcareclinic_last.models.Sitter
+import retrofit2.Callback
+import retrofit2.Response
 
-class SitterFragment : Fragment() {
-    private lateinit var binding: SitterFragmentBinding
-//    private  var sitterList: List<Sitter> = listOf()
+class PetFragment : Fragment() {
+    private lateinit var binding: PetFragmentBinding
+    private var petList: List<Pet> = listOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = SitterFragmentBinding.inflate(layoutInflater)
+    ): View? {
+        binding = PetFragmentBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -74,7 +78,7 @@ class SitterFragment : Fragment() {
         )
 
         // Set up the ListView with a custom adapter
-        val adapter = SitterAdapter(requireContext(), sitterList)
+        val adapter = PetAdapter(requireContext(), sitterList)
         binding.listViewPetList.adapter = adapter
 
         // Handle item clicks (optional)
@@ -84,4 +88,9 @@ class SitterFragment : Fragment() {
             Toast.makeText(requireContext(), "Clicked: ${sitter.name}", Toast.LENGTH_SHORT).show()
         }
     }
+
+
+
+
+
 }

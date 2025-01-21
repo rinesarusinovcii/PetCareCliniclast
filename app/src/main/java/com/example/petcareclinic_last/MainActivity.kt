@@ -11,8 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
@@ -22,44 +24,53 @@ import com.example.petcareclinic_last.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var appBarConfiguration: AppBarConfiguration
+
     private lateinit var binding: ActivityMainBinding
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Inflate layout using ViewBinding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set up Toolbar
-        setSupportActionBar(binding.appBarMain.toolbar)
+        // Setup DrawerLayout
+        drawerLayout = binding.drawerLayout
 
-        // Set up Navigation Drawer
-        val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navigationView
-        val navController = findNavController(R.id.nav_host_fragment_container_main)
+        // Setup NavController
+        navController = findNavController(R.id.nav_host_fragment_container_main)
 
-        // Set top-level destinations for the Navigation Drawer
+        // Setup AppBarConfiguration
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.homeFragment,
-                R.id.postFragment,
-                R.id.commentsFragment,
-
-            ), drawerLayout
+                R.id.homeFragment, // Replace with actual destination IDs
+                R.id.sitterFragment,
+                R.id.shopFragment
+            // Add other top-level destinations as needed
+            ),
+            drawerLayout
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
-    }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
-        return true
+        // Setup ActionBar with NavController
+        setSupportActionBar(binding.appBarMain.toolbar)
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
+
+        // Setup NavigationView with NavController
+        val navigationView: NavigationView = binding.navigationView
+        NavigationUI.setupWithNavController(navigationView, navController)
+
+        // Setup Drawer Toggle
+        val toggle = ActionBarDrawerToggle(
+            this, drawerLayout, binding.appBarMain.toolbar,
+            R.string.open, R.string.close
+        )
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_container_main)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+        return NavigationUI.navigateUp(navController, appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
+

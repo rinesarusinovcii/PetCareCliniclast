@@ -33,7 +33,7 @@ class ShopFragment : Fragment() {
         observeData()
     }
 
-    private fun observeData() {
+    fun observeData() {
         viewModel.shopList.observe(viewLifecycleOwner) { shopList ->
             binding.recyclerViewShop.adapter = ShopAdapter(shopList)
             binding.recyclerViewShop.layoutManager = LinearLayoutManager(requireContext())

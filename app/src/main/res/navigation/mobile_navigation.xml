@@ -7,41 +7,17 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.petcareclinic_last.fragments.PetFragment"
-        android:label="PetFragment" />
+        android:label="Home" />
+
+
     <fragment
-        android:id="@+id/commentsFragment"
+        android:id="@+id/sitterFragment"
         android:name="com.example.petcareclinic_last.fragments.SitterFragment"
-        android:label="SitterFragment" />
+        android:label="Sitter" />
+
     <fragment
-        android:id="@+id/postFragment"
+        android:id="@+id/shopFragment"
         android:name="com.example.petcareclinic_last.fragments.ShopFragment"
-        android:label="ShopFragment">
-<!--        <action-->
-<!--            android:id="@+id/action_postFragment_to_postDetailsFragment"-->
-<!--            app:destination="@id/postDetailsFragment"-->
-<!--            />-->
-    </fragment>
+        android:label="Shop" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/postDetailsFragment"-->
-<!--        android:name="com.cacttus.navigationdrawer_gr1.fragments.PostDetailsFragment"-->
-<!--        android:label="PostDetailsFragment">-->
-
-<!--        <argument-->
-<!--            android:name="id"-->
-<!--            app:argType="integer" />-->
-<!--    </fragment>-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/profileFragment"-->
-<!--        android:name="com.cacttus.navigationdrawer_gr1.fragments.ProfileFragment"-->
-<!--        android:label="ProfileFragment" />-->
-<!--    <fragment-->
-<!--        android:id="@+id/settingsFragment"-->
-<!--        android:name="com.cacttus.navigationdrawer_gr1.fragments.SettingsFragment"-->
-<!--        android:label="SettingsFragment" />-->
-<!--    <fragment-->
-<!--        android:id="@+id/userFragment"-->
-<!--        android:name="com.cacttus.navigationdrawer_gr1.fragments.UserFragment"-->
-<!--        android:label="UserFragment" />-->
 </navigation>

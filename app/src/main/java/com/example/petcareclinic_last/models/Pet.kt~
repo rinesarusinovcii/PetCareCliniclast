@@ -1,8 +1,0 @@
-package com.example.petcareclinic_last.models
-
-data class Pet( var id: Int,
-                var petPic: String,
-                var name: String,
-                var breed: String,
-                var characteristic: String,
-                var descriptionPet: String)

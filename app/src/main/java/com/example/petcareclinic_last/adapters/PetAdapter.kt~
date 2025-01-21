@@ -5,19 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.petcareclinic_last.R
-import com.example.petcareclinic_last.models.Sitter
+import com.example.petcareclinic_last.models.Pet
 
-class SitterAdapter(var context: Context, private var sitterList: List<Sitter>) : BaseAdapter() {
+class PetAdapter(var context: Context, private var petList: List<Pet>) : BaseAdapter() {
     private var layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
     override fun getCount(): Int {
-        return sitterList.size
+        return petList.size
     }
 
     override fun getItem(position: Int): Any {
-        return sitterList[position]
+        return petList[position]
     }
 
     override fun getItemId(position: Int): Long {
@@ -25,15 +26,17 @@ class SitterAdapter(var context: Context, private var sitterList: List<Sitter>) 
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val rowView = layoutInflater.inflate(R.layout.sitter_item, parent, false)
+        val rowView = layoutInflater.inflate(R.layout.pet_item, parent, false)
 
-        val sitterNameTextView = rowView.findViewById<TextView>(R.id.sitterNameTextView)
-        val sitterEmailTextView = rowView.findViewById<TextView>(R.id.email)
-        val sitterPhoneTextView = rowView.findViewById<TextView>(R.id.phone)
+        val sitterImageView = rowView.findViewById<ImageView>(R.id.picPet)
+        val sitterNameTextView = rowView.findViewById<TextView>(R.id.name)
+        val sitterEmailTextView = rowView.findViewById<TextView>(R.id.characteristics)
+        val sitterPhoneTextView = rowView.findViewById<TextView>(R.id.breed)
         val sitterDescriptionTextView = rowView.findViewById<TextView>(R.id.description)
 
         val sitter = sitterList[position]
-
+//        sitterImageView.setImageResource(sitterList[position].picture)
+        sitterImageView.setImageResource(sitter.picture)
         sitterNameTextView.text = sitter.name
         sitterEmailTextView.text = sitter.email
         sitterPhoneTextView.text = sitter.phoneNumber

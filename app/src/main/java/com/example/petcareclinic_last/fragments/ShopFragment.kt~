@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.petcareclinic_last.adapters.ShopAdapter
 import com.example.petcareclinic_last.databinding.ShopFragmentBinding
+import com.example.petcareclinic_last.viewModels.ShopViewModel
 
 
 class ShopFragment : Fragment() {
