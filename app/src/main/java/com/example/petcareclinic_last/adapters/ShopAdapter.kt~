@@ -7,10 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.petcareclinic_last.databinding.ShopItemBinding
 import com.example.petcareclinic_last.models.Shop
 
-class ShopAdapter(private val list: List<Shop>) :
-    RecyclerView.Adapter<ShopAdapter.ShopViewHolder>() {
-    class ShopViewHolder(private val binding: ShopItemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+class ShopAdapter(private val list: List<Shop>) : RecyclerView.Adapter<ShopAdapter.ShopViewHolder>() {
+
+    class ShopViewHolder(private val binding: ShopItemBinding ): RecyclerView.ViewHolder(binding.root) {
         fun bind(shop: Shop) {
             binding.shop = shop
             binding.executePendingBindings()

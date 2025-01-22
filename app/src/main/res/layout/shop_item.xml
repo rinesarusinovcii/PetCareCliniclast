@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-
     <data>
         <variable
             name="shop"
             type="com.example.petcareclinic_last.models.Shop" />
     </data>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="8dp">
 
-        <!-- Pet Picture -->
         <ImageView
             android:id="@+id/ivPetPic"
             android:layout_width="100dp"
@@ -23,7 +19,6 @@
             android:scaleType="centerCrop"
             android:src="@{shop.image}" />
 
-        <!-- Pet Name -->
         <TextView
             android:id="@+id/tvPetName"
             android:layout_width="wrap_content"
@@ -32,8 +27,6 @@
             android:text="@{shop.title}"
             android:textStyle="bold"
             android:textSize="18sp" />
-
-        <!-- Pet Breed -->
         <TextView
             android:id="@+id/tvPetBreed"
             android:layout_width="wrap_content"
@@ -41,7 +34,6 @@
             android:layout_marginHorizontal="10dp"
             android:text="@{String.valueOf(shop.price)}" />
 
-        <!-- Pet Age -->
         <TextView
             android:id="@+id/tvAge"
             android:layout_width="wrap_content"
@@ -49,21 +41,18 @@
             android:layout_marginHorizontal="10dp"
             android:text="@{shop.description}" />
 
-        <!-- Pet Price -->
         <TextView
             android:id="@+id/tvPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:text="@{shop.category}" />
-
         <TextView
             android:id="@+id/tvRate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:text="@{String.format(shop.rating)" />
-
 
     </LinearLayout>
 </layout>

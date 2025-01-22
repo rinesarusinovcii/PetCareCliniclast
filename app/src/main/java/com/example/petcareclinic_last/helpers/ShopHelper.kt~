@@ -11,7 +11,7 @@ object ShopHelper {
     fun provideRetrofit(): ServiceApiShop {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://fakestoreapi.com/") // Replace with your API base URL
+            .baseUrl("https://fakestoreapi.com/products") // Replace with your API base URL
             .build()
             .create(ServiceApiShop::class.java)
     }

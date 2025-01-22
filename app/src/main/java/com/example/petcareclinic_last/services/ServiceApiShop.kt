@@ -8,12 +8,15 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ServiceApiShop {
-    @GET("item")
-    fun getItem(): Call<List<Shop>>
+//    @GET("item")
+//    fun getItem(): Call<List<Shop>>
 
     @GET("item/{id}")
     fun getItemById(@Path("id") id: Int): Call<Shop>
 
     @GET("item/search")
     fun searchItemByBreed(@Query("item") breed: String): Call<List<Shop>>
+
+    @GET("products")
+    fun getItem(): Call<List<Shop>>
 }
