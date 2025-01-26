@@ -6,9 +6,13 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.petcareclinic_last.fragments.PetFragment"
+        android:name="com.example.petcareclinic_last.fragments.HomeFragment"
         android:label="Home" />
 
+    <fragment
+        android:id="@+id/petFragment"
+        android:name="com.example.petcareclinic_last.fragments.PetFragment"
+        android:label="Pet" />
 
     <fragment
         android:id="@+id/sitterFragment"

@@ -19,7 +19,17 @@
         app:layout_constraintVertical_bias="0.1" />
 
 
-
+    <ImageView
+        android:id="@+id/left_arrow"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:contentDescription="Left Arrow Icon"
+        android:src="@drawable/ic_leftarrow"
+        app:layout_constraintEnd_toEndOf="@id/orange_circle"
+        app:layout_constraintStart_toStartOf="@id/orange_circle"
+        app:layout_constraintTop_toTopOf="@id/orange_circle" />
 
 
     <View
